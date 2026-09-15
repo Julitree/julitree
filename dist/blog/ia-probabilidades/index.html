@@ -1,0 +1,52 @@
+<!doctype html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>La IA trabaja con probabilidades · Julitree</title><meta name="description" content="Por qué la inteligencia artificial no siempre responde lo mismo y qué diferencia a un sistema determinista de uno probabilístico."><link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="/assets/styles.css"></head><body>
+<header class="site-header"><div class="wrap nav"><a class="brand" href="/"><span class="brand-mark">J</span>Julitree</a><button class="menu-button" aria-expanded="false" aria-controls="nav-links">Menú</button><nav class="nav-links" id="nav-links" aria-label="Principal"><a href="/">Inicio</a><a href="/blog/" aria-current="page">Blog</a><a href="/sobre-mi/">Sobre mí</a></nav></div></header>
+<main><article><header class="article-header article-shell"><span class="eyebrow">Fundamentos de IA</span><h1>La IA trabaja con probabilidades: por qué no siempre responde lo mismo</h1><p class="article-deck">Una explicación sencilla sobre la diferencia entre el software tradicional y los sistemas de inteligencia artificial.</p><p class="article-meta">Por Juliana Gonzalez · 12 septiembre 2026 · 8 min de lectura</p></header>
+<div class="article-body article-shell">
+<p>Escribes una pregunta en una herramienta de inteligencia artificial, recibes una respuesta y, unos minutos después, vuelves a formular exactamente la misma pregunta. Esta vez el resultado cambia.</p>
+<p>Puede que la idea principal se mantenga, pero aparecen otras palabras, ejemplos diferentes o incluso una conclusión que no coincide por completo con la anterior.</p>
+<blockquote>¿Significa esto que la inteligencia artificial está cambiando de opinión?</blockquote>
+<p>No exactamente. Para comprender lo que ocurre, conviene conocer una diferencia fundamental: algunos sistemas son <strong>deterministas</strong> y otros trabajan de forma <strong>probabilística</strong>.</p>
+<p>Esta distinción ayuda a entender tanto el potencial de la IA como sus límites. También explica por qué podemos utilizarla para explorar soluciones, pero no deberíamos aceptar automáticamente todo lo que produce.</p>
+
+<h2>Qué es un sistema determinista</h2>
+<p>Un sistema determinista sigue reglas definidas. Si recibe los mismos datos y funciona bajo las mismas condiciones, produce el mismo resultado.</p>
+<p>Una calculadora ofrece un ejemplo claro. Si escribimos <code>5 + 5</code>, esperamos obtener <code>10</code> todas las veces. No tendría sentido que en un segundo intento respondiera 9 u 11.</p>
+<p>En desarrollo web encontramos sistemas deterministas constantemente. Podemos establecer que un formulario no se envíe si el campo de correo electrónico está vacío. Si el valor es válido, permite continuar. Si está vacío o tiene un formato incorrecto, muestra un error.</p>
+<p>Las reglas están escritas de antemano y la aplicación debe aplicarlas de la misma manera cada vez. Por eso este enfoque funciona bien en operaciones que requieren precisión, consistencia y resultados verificables.</p>
+
+<h2>Qué cambia en un sistema probabilístico</h2>
+<p>Un sistema probabilístico no depende únicamente de una lista cerrada de instrucciones para cada situación posible. Analiza patrones y calcula qué resultado parece más probable según los datos con los que fue entrenado y el contexto que recibe.</p>
+<p>Imaginemos una aplicación que intenta determinar si un comentario expresa satisfacción o descontento. “El servicio ha sido increíble” contiene señales bastante claras. Sin embargo, “esperaba algo diferente” resulta más ambiguo.</p>
+<p>En lugar de aplicar una única regla, el modelo puede asignar probabilidades a varias interpretaciones. Quizá estime que existe un 65 % de probabilidad de que el comentario sea negativo y un 35 % de que sea neutral.</p>
+<p>El sistema selecciona un resultado basándose en esas probabilidades. No está comprobando una verdad absoluta, sino realizando una estimación a partir de patrones.</p>
+
+<h2>Por qué una IA puede responder de manera diferente</h2>
+<p>Los modelos generativos producen contenido calculando qué palabras, fragmentos o elementos tienen mayor probabilidad de aparecer a continuación. Durante la generación existen varias continuaciones posibles, no una sola respuesta previamente almacenada.</p>
+<p>La instrucción del usuario, el contexto disponible, la configuración del modelo y las decisiones tomadas durante la generación influyen en el resultado. Por eso dos respuestas pueden transmitir una idea similar con estructuras y ejemplos distintos.</p>
+<p>Esto no significa que todos los sistemas probabilísticos deban comportarse siempre de manera diferente. Bajo determinadas configuraciones pueden producir resultados muy consistentes. La idea importante es que construyen sus respuestas a partir de probabilidades.</p>
+
+<h2>Los datos hacen posible el aprendizaje</h2>
+<p>Los datos permiten que los modelos identifiquen relaciones y regularidades. Un sistema que clasifica imágenes puede analizar muchas fotografías para aprender qué características suelen aparecer en perros, gatos, vehículos u otros objetos.</p>
+<p>Sin embargo, disponer de muchos datos no garantiza automáticamente un buen resultado. También importan su calidad, variedad, actualidad y procedencia.</p>
+<p>Si los datos contienen errores, están incompletos o representan de forma desigual a determinados grupos, el modelo puede aprender esos mismos problemas. La IA no convierte datos deficientes en conclusiones fiables por arte de magia.</p>
+
+<h2>El desafío de los datos ocultos</h2>
+<p>Las organizaciones generan enormes cantidades de información: documentos, correos, registros, comentarios de clientes e informes procedentes de distintas herramientas.</p>
+<p>Parte de esa información permanece sin utilizar porque está dispersa, tiene formatos incompatibles o resulta difícil de procesar con métodos tradicionales. A este conjunto se le suele llamar <strong>datos ocultos</strong>.</p>
+<p>La IA puede ayudar a descubrir relaciones dentro de ese contenido, pero antes debemos preguntar si tenemos permiso para procesarlo, si contiene información confidencial y cómo comprobaremos las conclusiones.</p>
+
+<h2>Reglas e IA pueden complementarse</h2>
+<p>Podemos utilizar reglas exactas para validar un formulario, controlar permisos o calcular un importe. Al mismo tiempo, la IA puede ayudar a clasificar una consulta, resumir un requerimiento o proponer posibles causas de un error.</p>
+<p>En mi trabajo como Web Developer, una herramienta de IA puede sugerir hipótesis, explicar una sección compleja o ayudarme a explorar alternativas. Sin embargo, la sugerencia no sustituye la comprobación en el código, las pruebas ni la revisión de los requerimientos.</p>
+
+<h2>Una respuesta convincente también puede estar equivocada</h2>
+<p>Una IA generativa puede redactar con fluidez incluso cuando la información que produce es incorrecta. El modelo busca una continuación coherente según los patrones aprendidos, pero no verifica necesariamente cada afirmación antes de presentarla.</p>
+<p>El tono de seguridad no representa un nivel real de certeza. Por eso conviene contrastar fechas, cifras, nombres, referencias y cualquier información que pueda afectar una decisión.</p>
+
+<h2>Conclusión</h2>
+<p>El software tradicional funciona especialmente bien cuando podemos definir reglas precisas y esperamos siempre el mismo resultado. La inteligencia artificial amplía lo que podemos hacer cuando los problemas contienen ambigüedad, grandes cantidades de información o patrones difíciles de describir manualmente.</p>
+<p>Esa flexibilidad tiene un precio: sus resultados necesitan contexto, revisión y criterio humano.</p>
+<p>La próxima vez que una herramienta de IA responda de manera diferente, recuerda que no está cambiando de opinión como lo haría una persona. Está generando otra respuesta posible a partir de probabilidades.</p>
+<p class="article-note">Este artículo surgió a partir de una reflexión durante mi formación en Artificial Intelligence Fundamentals de IBM SkillsBuild.</p>
+</div></article></main>
+<footer class="site-footer"><div class="wrap footer-row"><span>© 2026 Julitree · Juliana Gonzalez</span><a href="/blog/">Volver al blog</a></div></footer><script src="/assets/site.js"></script></body></html>
