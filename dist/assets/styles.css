@@ -41,6 +41,8 @@ img { max-width: 100%; }
 .nav-links { display: flex; align-items: center; gap: 28px; }
 .nav-links a { text-decoration: none; color: var(--muted); font-weight: 650; font-size: .94rem; }
 .nav-links a:hover, .nav-links a[aria-current="page"] { color: var(--blue); }
+.nav-links .language-link { padding: 5px 10px; border: 1px solid var(--line); border-radius: 999px; color: var(--blue); font-size: .78rem; font-weight: 800; }
+.nav-links .language-link:hover { border-color: var(--blue); background: #e8f0fe; }
 .menu-button { display: none; border: 0; background: transparent; font: inherit; font-weight: 700; color: var(--ink); }
 
 .hero {

@@ -1,0 +1,84 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>AI agents: autonomy, permissions and human oversight · Julitree</title><meta name="description" content="Why AI agents need clear information, defined permissions, approval points and human oversight to act safely."><link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="/assets/styles.css"></head><body>
+<header class="site-header"><div class="wrap nav"><a class="brand" href="/en/"><span class="brand-mark">J</span>Julitree</a><button class="menu-button" aria-expanded="false" aria-controls="nav-links">Menu</button><nav class="nav-links" id="nav-links" aria-label="Main navigation"><a href="/en/">Home</a><a href="/en/blog/" aria-current="page">Blog</a><a href="/en/about/">About</a><a class="language-link" href="/blog/agentes-ia-permisos/" lang="es" hreflang="es">ES</a></nav></div></header>
+<main><article><header class="article-header article-shell"><span class="eyebrow">AI agents</span><h1>AI agents: autonomy, permissions and human oversight</h1><p class="article-deck">An agent can make decisions and take action, but that does not mean it should do everything without asking. Information quality and the boundaries we define are essential parts of its design.</p><p class="article-meta">By Juliana Gonzalez · September 19, 2026 · 7 min read</p></header>
+<div class="article-body article-shell">
+<p>Imagine an AI agent responsible for organizing a company's inventory. It receives a product list, interprets the descriptions, corrects formats and creates a consistent record for each item.</p>
+<p>The work appears straightforward until it encounters missing data, conflicting names or specifications it cannot verify. Should it choose the option that seems most likely? Can it update the database directly? Or should it stop and request a review?</p>
+<p>These questions show that designing an agent is not only about giving it a goal. We must also define what information it can use, what it may do independently and when a person needs to intervene.</p>
+<blockquote>AI agents work best when they receive clear information and operate within equally clear boundaries.</blockquote>
+
+<h2>Input quality shapes the outcome</h2>
+<p>An agent analyses the data available to it. If that data is ambiguous, incomplete or incorrect, its decisions may be as well.</p>
+<p>Suppose it needs to normalize a fastener catalogue and encounters these three descriptions:</p>
+<ul>
+  <li><code>Hex bolt M8 × 30 mm, stainless steel</code></li>
+  <li><code>HEX M8 3CM SS</code></li>
+  <li><code>M8 × 30 steel</code></li>
+</ul>
+<p>All three may refer to similar products, but they do not contain exactly the same information. The third description does not specify the head type, and “steel” does not necessarily mean “stainless steel.” If the agent fills these fields based on similarity, it may create a convincing but incorrect record.</p>
+<p>An instruction such as “clean all the data” does not explain what clean means, which sources are valid or how to handle a contradiction. To work reliably, the agent needs a defined schema, normalization rules, approved sources and a way to recognize when it does not know enough.</p>
+
+<h2>Why agents make mistakes</h2>
+<p>A mistake is not always caused by an insufficiently advanced model. It often results from a combination of several factors:</p>
+<div class="concept-grid">
+  <div class="concept-card"><strong>Insufficient information</strong><p>Required fields, context or a source for verifying the data are missing.</p></div>
+  <div class="concept-card"><strong>Ambiguous objective</strong><p>The instruction allows several interpretations and does not define an acceptable result.</p></div>
+  <div class="concept-card"><strong>Unrestricted actions</strong><p>The agent can execute changes even when it lacks enough confidence to do so.</p></div>
+</div>
+<p>Understanding these causes helps us design better processes. Instead of asking an agent to “solve everything,” we can specify what it should do when it finds valid data, missing information or a contradiction.</p>
+
+<h2>Autonomy does not mean independence</h2>
+<p>An agent is autonomous when it can progress through several steps without receiving a human instruction for each one. However, it still depends on goals, data, tools and boundaries defined by people.</p>
+<p>For example, an agent could automatically convert centimetres to millimetres, standardize abbreviations and detect potential duplicates. That does not mean it should invent a component's material, replace an uncertain reference or delete records without confirmation.</p>
+<p>Useful autonomy is gradual. The more predictable, reversible and verifiable an action is, the more reasonable it is to automate. The greater its impact or uncertainty, the more important human approval becomes.</p>
+
+<h2>Permissions are part of the design</h2>
+<p>When using AI agents, we need to define which actions they can perform autonomously and which require human approval. This decision brings us to a fundamental concept: <strong>permissions</strong>.</p>
+<p>Permissions determine what information and tools an agent can access and which operations it is allowed to perform. They are not an extra security layer added at the end; they are part of the system's architecture.</p>
+<div class="comparison-grid">
+  <div class="comparison-card"><h3>Can perform automatically</h3><p>Read authorized records, standardize formats, convert units, detect missing fields, suggest matches and prepare a draft.</p></div>
+  <div class="comparison-card"><h3>Requires approval</h3><p>Complete unverifiable data, overwrite conflicting information, delete records, communicate externally or execute changes with significant consequences.</p></div>
+</div>
+<p>A sound principle is to grant only the permissions required for the task. If the objective is to prepare a normalization proposal, the agent does not need direct access to modify the final catalogue.</p>
+
+<h2>Escalation points</h2>
+<p>In addition to permissions, we must define when the agent should stop and ask for help. We can call these situations <strong>escalation points</strong>.</p>
+<p>An agent might escalate a record when:</p>
+<ul>
+  <li>A required specification is missing and no verifiable source is available.</li>
+  <li>Two authorized documents contain different values.</li>
+  <li>The match confidence is below the defined threshold.</li>
+  <li>The requested action is irreversible or affects other systems.</li>
+  <li>The case falls outside known rules and examples.</li>
+</ul>
+<p>Escalation does not mean the agent has failed. Recognizing uncertainty and providing the information a person needs to decide is also a valuable outcome.</p>
+
+<h2>A safer workflow</h2>
+<p>For the catalogue example, we could combine deterministic rules, AI and human review:</p>
+<ol>
+  <li><strong>Preserve the original data</strong> to maintain traceability.</li>
+  <li><strong>Extract the specifications</strong> contained in each description.</li>
+  <li><strong>Apply exact rules</strong> to units, abbreviations and formats.</li>
+  <li><strong>Compare against authorized sources</strong> without filling gaps by intuition.</li>
+  <li><strong>Assign a confidence level</strong> and explain the evidence used.</li>
+  <li><strong>Send exceptions for review</strong> before modifying the final record.</li>
+</ol>
+<p>This approach reserves AI for interpreting variable information and uses rules for transformations that must always produce the same result. People can then focus on genuinely ambiguous cases.</p>
+
+<h2>Five questions before giving an agent autonomy</h2>
+<ol>
+  <li>Is the input information sufficient, current and verifiable?</li>
+  <li>Is the objective defined precisely?</li>
+  <li>What data and tools does the agent actually need?</li>
+  <li>Which actions require human approval?</li>
+  <li>When should it stop and escalate the case?</li>
+</ol>
+<p>Answering these questions helps turn an attractive demonstration into a more reliable and useful system.</p>
+
+<h2>Conclusion</h2>
+<p>AI agents can process information, choose steps and use tools to reach a goal. But their ability to act does not remove the need for thoughtful design, control and accountability.</p>
+<p>Clear information reduces errors. Permissions limit the scope of actions. Escalation points allow a person to intervene when uncertainty or risk appears.</p>
+<p>When thinking about an agent, it is therefore not enough to ask what it can do. We must also decide <strong>what it should be allowed to do, with what information and under which conditions</strong>.</p>
+<p class="article-note">This article draws on concepts studied in the Artificial Intelligence Fundamentals course by IBM SkillsBuild. The explanations, structure and examples have been developed and adapted for Julitree.</p>
+</div></article></main>
+<footer class="site-footer"><div class="wrap footer-row"><span>© 2026 Julitree · Juliana Gonzalez</span><a href="/en/blog/">Back to the blog</a></div></footer><script src="/assets/site.js"></script></body></html>

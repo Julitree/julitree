@@ -1,0 +1,52 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>AI works with probabilities · Julitree</title><meta name="description" content="Why artificial intelligence does not always give the same answer and what makes a deterministic system different from a probabilistic one."><link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="/assets/styles.css"></head><body>
+<header class="site-header"><div class="wrap nav"><a class="brand" href="/en/"><span class="brand-mark">J</span>Julitree</a><button class="menu-button" aria-expanded="false" aria-controls="nav-links">Menu</button><nav class="nav-links" id="nav-links" aria-label="Main navigation"><a href="/en/">Home</a><a href="/en/blog/" aria-current="page">Blog</a><a href="/en/about/">About</a><a class="language-link" href="/blog/ia-probabilidades/" lang="es" hreflang="es">ES</a></nav></div></header>
+<main><article><header class="article-header article-shell"><span class="eyebrow">AI fundamentals</span><h1>AI works with probabilities: why it does not always give the same answer</h1><p class="article-deck">A straightforward explanation of the difference between traditional software and artificial intelligence systems.</p><p class="article-meta">By Juliana Gonzalez · September 12, 2026 · 8 min read</p></header>
+<div class="article-body article-shell">
+<p>You type a question into an artificial intelligence tool and receive an answer. A few minutes later, you ask exactly the same question again. This time, the result changes.</p>
+<p>The main idea may remain, but the wording changes, different examples appear or even the conclusion no longer fully matches the previous one.</p>
+<blockquote>Does this mean artificial intelligence is changing its mind?</blockquote>
+<p>Not exactly. To understand what is happening, it helps to know one fundamental difference: some systems are <strong>deterministic</strong>, while others work in a <strong>probabilistic</strong> way.</p>
+<p>This distinction helps us understand both the potential and the limitations of AI. It also explains why we can use it to explore solutions but should not automatically accept everything it produces.</p>
+
+<h2>What is a deterministic system?</h2>
+<p>A deterministic system follows defined rules. If it receives the same data under the same conditions, it produces the same result.</p>
+<p>A calculator provides a clear example. If we enter <code>5 + 5</code>, we expect to get <code>10</code> every time. It would make no sense for it to answer 9 or 11 on a second attempt.</p>
+<p>In web development, we work with deterministic systems constantly. We can specify that a form must not be submitted if the email field is empty. If the value is valid, the user can continue. If it is empty or incorrectly formatted, the application displays an error.</p>
+<p>The rules are written in advance, and the application must apply them in the same way every time. This approach therefore works well for operations that demand accuracy, consistency and verifiable results.</p>
+
+<h2>What changes in a probabilistic system?</h2>
+<p>A probabilistic system does not rely solely on a closed list of instructions for every possible situation. It analyses patterns and estimates which result is most likely according to its training data and the context it receives.</p>
+<p>Imagine an application trying to decide whether a comment expresses satisfaction or dissatisfaction. “The service was amazing” contains fairly clear signals. “I expected something different,” however, is more ambiguous.</p>
+<p>Instead of applying a single rule, the model can assign probabilities to several interpretations. It might estimate a 65% probability that the comment is negative and a 35% probability that it is neutral.</p>
+<p>The system selects a result based on those probabilities. It is not verifying an absolute truth; it is making an estimate based on patterns.</p>
+
+<h2>Why AI can respond differently</h2>
+<p>Generative models produce content by calculating which words, fragments or elements are most likely to come next. During generation, several continuations are possible rather than one stored answer.</p>
+<p>The user's instruction, the available context, the model configuration and the choices made during generation all influence the outcome. Two responses can therefore communicate a similar idea using different structures and examples.</p>
+<p>This does not mean probabilistic systems must always behave differently. Under certain settings, they can produce very consistent results. The key point is that they construct their responses from probabilities.</p>
+
+<h2>Data makes learning possible</h2>
+<p>Data allows models to identify relationships and patterns. A system that classifies images may analyse many photographs to learn which characteristics commonly appear in dogs, cats, vehicles or other objects.</p>
+<p>Having large amounts of data, however, does not automatically guarantee a good result. Its quality, variety, recency and origin also matter.</p>
+<p>If data contains errors, is incomplete or represents certain groups unevenly, the model may learn those same problems. AI does not magically transform poor data into reliable conclusions.</p>
+
+<h2>The challenge of dark data</h2>
+<p>Organizations generate enormous amounts of information: documents, emails, records, customer comments and reports from different tools.</p>
+<p>Some of this information remains unused because it is scattered, stored in incompatible formats or difficult to process using traditional methods. This collection is often known as <strong>dark data</strong>.</p>
+<p>AI can help identify relationships within this content, but first we need to ask whether we have permission to process it, whether it contains confidential information and how we will verify the conclusions.</p>
+
+<h2>Rules and AI can complement each other</h2>
+<p>We can use exact rules to validate a form, manage permissions or calculate an amount. At the same time, AI can help classify a request, summarize a requirement or suggest possible causes of an error.</p>
+<p>In my work as a Web Developer, an AI tool can suggest hypotheses, explain a complex section or help me explore alternatives. Its suggestion does not replace checking the code, running tests or reviewing the requirements.</p>
+
+<h2>A convincing answer can still be wrong</h2>
+<p>Generative AI can write fluently even when the information it produces is incorrect. The model seeks a coherent continuation based on learned patterns, but it does not necessarily verify every claim before presenting it.</p>
+<p>A confident tone does not represent a real level of certainty. Dates, figures, names, references and any information that may influence a decision should therefore be checked.</p>
+
+<h2>Conclusion</h2>
+<p>Traditional software works particularly well when we can define precise rules and always expect the same result. Artificial intelligence extends what we can do when problems contain ambiguity, large amounts of information or patterns that are difficult to describe manually.</p>
+<p>That flexibility comes at a cost: its results require context, review and human judgment.</p>
+<p>The next time an AI tool gives you a different answer, remember that it is not changing its mind as a person would. It is generating another possible response based on probabilities.</p>
+<p class="article-note">This article grew from a reflection during my Artificial Intelligence Fundamentals training with IBM SkillsBuild.</p>
+</div></article></main>
+<footer class="site-footer"><div class="wrap footer-row"><span>© 2026 Julitree · Juliana Gonzalez</span><a href="/en/blog/">Back to the blog</a></div></footer><script src="/assets/site.js"></script></body></html>
