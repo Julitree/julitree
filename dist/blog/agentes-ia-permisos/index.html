@@ -1,0 +1,84 @@
+<!doctype html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Agentes de IA: autonomía, permisos y control humano · Julitree</title><meta name="description" content="Por qué los agentes de IA necesitan información clara, permisos definidos, puntos de aprobación y supervisión humana para actuar de forma segura."><link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="/assets/styles.css"></head><body>
+<header class="site-header"><div class="wrap nav"><a class="brand" href="/"><span class="brand-mark">J</span>Julitree</a><button class="menu-button" aria-expanded="false" aria-controls="nav-links">Menú</button><nav class="nav-links" id="nav-links" aria-label="Principal"><a href="/">Inicio</a><a href="/blog/" aria-current="page">Blog</a><a href="/sobre-mi/">Sobre mí</a></nav></div></header>
+<main><article><header class="article-header article-shell"><span class="eyebrow">Agentes de IA</span><h1>Agentes de IA: autonomía, permisos y control humano</h1><p class="article-deck">Un agente puede tomar decisiones y ejecutar acciones, pero eso no significa que deba hacerlo todo sin preguntar. La calidad de la información y los límites que definimos forman parte esencial de su diseño.</p><p class="article-meta">Por Juliana Gonzalez · 19 septiembre 2026 · 7 min de lectura</p></header>
+<div class="article-body article-shell">
+<p>Imagina un agente de IA encargado de organizar el inventario de una empresa. Recibe una lista de productos, interpreta sus descripciones, corrige formatos y completa una ficha común para cada artículo.</p>
+<p>El trabajo parece sencillo hasta que encuentra datos incompletos, nombres contradictorios o características que no puede verificar. ¿Debe elegir la opción que parece más probable? ¿Puede modificar directamente la base de datos? ¿O debería detenerse y solicitar una revisión?</p>
+<p>Estas preguntas muestran que diseñar un agente no consiste solamente en darle una meta. También es necesario definir con qué información trabaja, qué puede hacer por sí mismo y cuándo debe intervenir una persona.</p>
+<blockquote>Los agentes de IA funcionan mejor cuando reciben información clara y operan dentro de límites igualmente claros.</blockquote>
+
+<h2>La calidad de la entrada condiciona el resultado</h2>
+<p>Un agente analiza los datos que tiene disponibles. Si esos datos son ambiguos, incompletos o incorrectos, sus decisiones también pueden serlo.</p>
+<p>Supongamos que debe normalizar un catálogo de tornillería y encuentra estas tres descripciones:</p>
+<ul>
+  <li><code>Tornillo hexagonal M8 × 30 mm, acero inoxidable</code></li>
+  <li><code>TORN M8 3CM INOX</code></li>
+  <li><code>M8 × 30 acero</code></li>
+</ul>
+<p>Las tres pueden referirse a productos parecidos, pero no contienen exactamente la misma información. La tercera descripción no indica el tipo de cabeza y “acero” no significa necesariamente “acero inoxidable”. Si el agente completa esos campos por semejanza, puede generar un registro convincente, pero incorrecto.</p>
+<p>Una instrucción como “limpia todos los datos” tampoco explica qué significa limpiar, qué fuentes son válidas o cómo tratar una contradicción. Para trabajar de manera fiable, el agente necesita un esquema definido, reglas de normalización, fuentes autorizadas y un criterio para reconocer cuándo no sabe lo suficiente.</p>
+
+<h2>Por qué se equivocan los agentes</h2>
+<p>Un error no siempre se debe a que el modelo sea poco avanzado. Muchas veces aparece por la combinación de varios factores:</p>
+<div class="concept-grid">
+  <div class="concept-card"><strong>Información insuficiente</strong><p>Faltan campos, contexto o una fuente con la que verificar el dato.</p></div>
+  <div class="concept-card"><strong>Objetivo ambiguo</strong><p>La instrucción permite varias interpretaciones y no define qué resultado es aceptable.</p></div>
+  <div class="concept-card"><strong>Acciones sin límites</strong><p>El agente puede ejecutar cambios aunque no tenga suficiente certeza para hacerlos.</p></div>
+</div>
+<p>Comprender estas causas permite diseñar mejores procesos. En lugar de pedir al agente que “resuelva todo”, podemos especificar qué debe hacer cuando encuentra un dato válido, uno incompleto o una contradicción.</p>
+
+<h2>Autonomía no significa independencia</h2>
+<p>Un agente es autónomo cuando puede avanzar durante varios pasos sin recibir una instrucción humana para cada uno. Sin embargo, continúa dependiendo de los objetivos, datos, herramientas y límites definidos por personas.</p>
+<p>Por ejemplo, un agente podría convertir centímetros a milímetros, unificar abreviaturas y detectar posibles duplicados de manera automática. Eso no significa que deba inventar el material de una pieza, sustituir una referencia dudosa o eliminar registros sin confirmación.</p>
+<p>La autonomía útil es gradual. Cuanto más predecible, reversible y verificable sea una acción, más razonable resulta automatizarla. Cuanto mayor sea su impacto o incertidumbre, más importante será incluir una aprobación humana.</p>
+
+<h2>Los permisos forman parte del diseño</h2>
+<p>Al utilizar agentes de IA, es importante definir qué acciones pueden realizar de manera autónoma y cuáles requieren aprobación humana. Esta decisión nos lleva a un concepto fundamental: los <strong>permisos</strong>.</p>
+<p>Los permisos determinan a qué información y herramientas puede acceder el agente y qué operaciones tiene permitido ejecutar. No son un añadido que se incorpora al final; forman parte de la arquitectura del sistema.</p>
+<div class="comparison-grid">
+  <div class="comparison-card"><h3>Puede hacer automáticamente</h3><p>Leer registros autorizados, estandarizar formatos, convertir unidades, detectar campos vacíos, proponer coincidencias y preparar un borrador.</p></div>
+  <div class="comparison-card"><h3>Requiere aprobación</h3><p>Completar datos no verificables, sobrescribir información contradictoria, borrar registros, comunicarse externamente o ejecutar cambios con consecuencias importantes.</p></div>
+</div>
+<p>Un buen principio es conceder solamente los permisos necesarios para cumplir la tarea. Si el objetivo es preparar una propuesta de normalización, el agente no necesita acceso para modificar directamente el catálogo definitivo.</p>
+
+<h2>Los puntos de escalado</h2>
+<p>Además de los permisos, debemos definir cuándo el agente debe detenerse y pedir ayuda. A esas situaciones podemos llamarlas <strong>puntos de escalado</strong>.</p>
+<p>Un agente podría escalar un registro cuando:</p>
+<ul>
+  <li>Falta una característica obligatoria y no existe una fuente verificable.</li>
+  <li>Dos documentos autorizados contienen valores diferentes.</li>
+  <li>La confianza de la coincidencia está por debajo del umbral establecido.</li>
+  <li>La acción solicitada es irreversible o afecta a otros sistemas.</li>
+  <li>El caso se encuentra fuera de las reglas y ejemplos conocidos.</li>
+</ul>
+<p>Escalar no significa que el agente haya fracasado. Reconocer la incertidumbre y entregar la información necesaria para que una persona decida es también un resultado valioso.</p>
+
+<h2>Un flujo más seguro</h2>
+<p>En el ejemplo del catálogo, podríamos combinar reglas deterministas, IA y revisión humana:</p>
+<ol>
+  <li><strong>Conservar el dato original</strong> para no perder la trazabilidad.</li>
+  <li><strong>Extraer las características</strong> presentes en cada descripción.</li>
+  <li><strong>Aplicar reglas exactas</strong> para unidades, abreviaturas y formatos.</li>
+  <li><strong>Comparar con fuentes autorizadas</strong> sin completar datos por intuición.</li>
+  <li><strong>Asignar un nivel de confianza</strong> y explicar las evidencias utilizadas.</li>
+  <li><strong>Enviar las excepciones a revisión</strong> antes de modificar el registro definitivo.</li>
+</ol>
+<p>Este enfoque reserva la IA para interpretar información variable y utiliza reglas para las transformaciones que deben producir siempre el mismo resultado. La persona se concentra en los casos realmente ambiguos.</p>
+
+<h2>Cinco preguntas antes de dar autonomía a un agente</h2>
+<ol>
+  <li>¿La información de entrada es suficiente, actual y verificable?</li>
+  <li>¿El objetivo está definido de forma concreta?</li>
+  <li>¿Qué datos y herramientas necesita realmente?</li>
+  <li>¿Qué acciones requieren aprobación humana?</li>
+  <li>¿Cuándo debe detenerse y escalar el caso?</li>
+</ol>
+<p>Responder estas preguntas ayuda a convertir una demostración atractiva en un sistema más confiable y útil.</p>
+
+<h2>Conclusión</h2>
+<p>Los agentes de IA pueden procesar información, elegir pasos y utilizar herramientas para alcanzar una meta. Pero su capacidad para actuar no elimina la necesidad de diseño, control y responsabilidad.</p>
+<p>La información clara reduce los errores. Los permisos limitan el alcance de las acciones. Los puntos de escalado permiten que una persona intervenga cuando existe incertidumbre o riesgo.</p>
+<p>Por eso, al pensar en un agente, no basta con preguntar qué puede hacer. También debemos decidir <strong>qué debería poder hacer, con qué información y bajo qué condiciones</strong>.</p>
+<p class="article-note">Este artículo parte de conceptos estudiados en el curso Artificial Intelligence Fundamentals de IBM SkillsBuild. Las explicaciones, la estructura y los ejemplos han sido desarrollados y adaptados para Julitree.</p>
+</div></article></main>
+<footer class="site-footer"><div class="wrap footer-row"><span>© 2026 Julitree · Juliana Gonzalez</span><a href="/blog/">Volver al blog</a></div></footer><script src="/assets/site.js"></script></body></html>
