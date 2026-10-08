@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Cuando la IA deja de responder y empieza a actuar · Julitree</title>
+  <meta name="description" content="Una mirada práctica a los riesgos de seguridad que aparecen cuando un agente de IA puede utilizar herramientas, consultar datos y ejecutar acciones.">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/assets/styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap nav">
+      <a class="brand" href="/"><span class="brand-mark">J</span>Julitree</a>
+      <button class="menu-button" aria-expanded="false" aria-controls="nav-links">Menú</button>
+      <nav class="nav-links" id="nav-links" aria-label="Principal">
+        <a href="/">Inicio</a>
+        <a href="/blog/" aria-current="page">Blog</a>
+        <a href="/sobre-mi/">Sobre mí</a>
+        <a class="language-link" href="/en/blog/" lang="en" hreflang="en">EN</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <article>
+      <header class="article-header article-shell">
+        <span class="eyebrow">Seguridad en IA</span>
+        <h1>Cuando la IA deja de responder y empieza a actuar</h1>
+        <p class="article-deck">Una mirada práctica a los riesgos que aparecen cuando una IA puede utilizar herramientas, consultar datos y ejecutar acciones por nuestra cuenta.</p>
+        <p class="article-meta">Por Juliana Gonzalez · 8 octubre 2026 · 9 min de lectura</p>
+      </header>
+
+      <div class="article-body article-shell">
+        <p>Hasta hace poco, la mayoría de las conversaciones sobre seguridad en inteligencia artificial se centraban en lo que un modelo podía <strong>decir</strong>. Con la llegada de los agentes de IA, la pregunta cambia: ahora también debemos preocuparnos por lo que pueden <strong>hacer</strong>.</p>
+        <p>Un chatbot responde a una consulta. Un agente, en cambio, puede consultar documentos, navegar por internet, utilizar APIs, ejecutar código, modificar archivos, enviar correos o coordinarse con otros agentes para completar una tarea.</p>
+        <p>Esa capacidad es precisamente lo que los hace útiles. También es lo que amplía su superficie de riesgo.</p>
+        <blockquote>No se trata de pensar que un agente tiene malas intenciones. El riesgo aparece cuando interpreta mal una instrucción, confía en información manipulada o dispone de más permisos de los necesarios.</blockquote>
+
+        <h2>1. Inyección de instrucciones y secuestro del objetivo</h2>
+        <p>Uno de los riesgos más conocidos es la <strong>prompt injection</strong>. Ocurre cuando alguien introduce instrucciones diseñadas para alterar el comportamiento del modelo.</p>
+        <p>En un agente, el ataque ni siquiera tiene que venir directamente del usuario. Puede esconderse en una página web, un correo, un documento o cualquier otra fuente que el agente consulte durante su trabajo. El agente puede confundir ese contenido externo con una instrucción legítima y terminar siguiendo las órdenes de un tercero.</p>
+        <p>Imaginemos un asistente encargado de revisar correos y guardar facturas. Uno de los mensajes contiene un texto oculto que le pide ignorar su objetivo original y enviar determinados documentos a otra dirección. Si el agente no distingue correctamente entre <strong>datos</strong> e <strong>instrucciones</strong>, podría ejecutar la acción.</p>
+        <p>NIST denomina a este escenario <em>agent hijacking</em>: el agente encuentra datos aparentemente normales que contienen instrucciones maliciosas y termina desviándose de la tarea solicitada por el usuario.</p>
+
+        <h2>2. Herramientas con demasiados permisos</h2>
+        <p>Un agente solo puede causar un impacto real si tiene acceso a herramientas. El riesgo aparece cuando esas herramientas conceden permisos demasiado amplios.</p>
+        <p>Un asistente que únicamente necesita leer informes no debería poder borrarlos. Un agente que prepara borradores de correo no necesita necesariamente permiso para enviarlos. Y uno que consulta disponibilidad no debería poder confirmar una compra sin autorización.</p>
+        <p>El principio de <strong>mínimo privilegio</strong> resulta fundamental: cada agente debe recibir únicamente los permisos imprescindibles para completar su función, durante el tiempo necesario y sobre los recursos concretos que necesita.</p>
+        <p>No basta con escribir en el prompt «no elimines archivos». La restricción debe existir también en la herramienta y en la infraestructura. La seguridad no puede depender de que el modelo recuerde obedecer una frase.</p>
+
+        <h2>3. Filtración de información sensible</h2>
+        <p>Los agentes suelen trabajar con grandes cantidades de contexto: documentos internos, correos, historiales, datos de clientes, credenciales temporales o resultados devueltos por APIs.</p>
+        <p>Si todo ese contenido se entrega al agente sin límites claros, aumenta la posibilidad de que información sensible aparezca en una respuesta, en un registro, en una llamada a una herramienta o en una petición hacia un servicio externo.</p>
+        <p>El problema no siempre es un ataque deliberado. También puede ser una configuración deficiente: registrar conversaciones completas, reutilizar el mismo contexto entre usuarios o permitir que el agente consulte carpetas que no necesita.</p>
+        <p>La pregunta correcta no es solo «¿puede acceder a estos datos?», sino también «¿necesita acceder a ellos para realizar esta tarea concreta?».</p>
+
+        <h2>4. Memoria contaminada</h2>
+        <p>Algunos agentes conservan memoria para recordar preferencias, decisiones anteriores o información útil para futuras tareas. Esa memoria mejora la continuidad, pero también puede convertirse en un punto de entrada.</p>
+        <p>Si el agente almacena información externa sin validarla, una instrucción maliciosa puede permanecer en su memoria e influir en acciones posteriores. El ataque ya no afecta únicamente a una conversación: puede reaparecer días después o trasladarse a otros flujos.</p>
+        <p>La memoria no debería tratarse como una libreta completamente confiable. Es necesario controlar qué se guarda, de dónde procede, cuánto tiempo permanece y quién puede utilizarlo.</p>
+
+        <h2>5. Errores que se propagan entre agentes</h2>
+        <p>En los sistemas multiagente, un agente puede delegar tareas en otros: uno investiga, otro analiza y un tercero ejecuta. Esta distribución puede ser eficiente, pero también permite que una instrucción manipulada o una conclusión incorrecta se propague por toda la cadena.</p>
+        <p>Si los agentes confían automáticamente entre sí, el error inicial puede adquirir apariencia de legitimidad a medida que pasa de uno a otro. El último agente quizá no tenga acceso al origen de la información y actúe basándose únicamente en el resultado recibido.</p>
+        <p>Cada comunicación debería conservar su procedencia y cada agente debería validar las acciones que estén fuera de su responsabilidad o impliquen un impacto importante.</p>
+
+        <h2>6. Dependencias, integraciones y servidores MCP</h2>
+        <p>Los agentes rara vez funcionan aislados. Utilizan modelos, bibliotecas, APIs, plugins y servidores MCP para acceder a nuevas capacidades.</p>
+        <p>Cada integración añade confianza en un tercero. Una herramienta comprometida, una dependencia manipulada o un servidor MCP con permisos excesivos puede convertirse en una puerta de entrada hacia los datos y sistemas conectados al agente.</p>
+        <p>Instalar una nueva herramienta para un agente debería evaluarse con el mismo cuidado que cualquier otra dependencia de software: quién la mantiene, qué permisos solicita, qué datos recibe, qué acciones puede ejecutar y cómo se actualiza.</p>
+
+        <h2>7. Bucles, consumo descontrolado y costes inesperados</h2>
+        <p>Un agente puede planificar una tarea, comprobar el resultado y volver a intentarlo. Sin límites, ese comportamiento puede producir bucles de llamadas, uso excesivo de APIs o consumo innecesario de recursos.</p>
+        <p>OWASP utiliza el término <strong>Denial of Wallet</strong> para describir ataques o errores capaces de generar costes elevados mediante un consumo descontrolado. No siempre veremos una caída del sistema; algunas veces el primer síntoma será una factura inesperada.</p>
+        <p>Por eso los agentes necesitan límites de tiempo, presupuesto, número de pasos y frecuencia de llamadas, además de mecanismos para detener su ejecución.</p>
+
+        <h2>¿Cómo reducir estos riesgos?</h2>
+        <p>No existe una única medida capaz de asegurar un agente. La protección debe aplicarse en varias capas:</p>
+        <ul>
+          <li>Conceder a cada agente el mínimo número posible de herramientas y permisos.</li>
+          <li>Separar claramente las instrucciones del sistema, las solicitudes del usuario y los datos externos.</li>
+          <li>Tratar páginas, correos, documentos y respuestas de APIs como contenido no confiable.</li>
+          <li>Solicitar confirmación humana antes de compras, envíos, eliminaciones, cambios de permisos y otras acciones difíciles de revertir.</li>
+          <li>Utilizar credenciales limitadas, temporales y vinculadas a una tarea concreta.</li>
+          <li>Aislar la ejecución mediante entornos controlados y restringir el acceso a archivos, red y comandos.</li>
+          <li>Validar la información antes de guardarla en la memoria del agente.</li>
+          <li>Registrar las decisiones y llamadas a herramientas para poder reconstruir qué ocurrió.</li>
+          <li>Establecer límites de pasos, tiempo y presupuesto, además de un mecanismo de detención.</li>
+          <li>Probar escenarios adversos antes de conectar el agente a sistemas reales.</li>
+        </ul>
+
+        <h2>La autonomía necesita límites</h2>
+        <p>Los agentes de IA no son simplemente chatbots más avanzados. Son sistemas capaces de combinar razonamiento, datos, herramientas y acciones. Su seguridad, por tanto, no puede limitarse a filtrar respuestas incómodas o escribir mejores prompts.</p>
+        <p>Cuanta más autonomía concedemos a un agente, más importantes se vuelven los permisos, la supervisión, la trazabilidad y los límites técnicos.</p>
+        <p>La meta no debería ser eliminar toda autonomía, porque entonces perderíamos gran parte de su utilidad. El verdadero reto es construir una autonomía controlada: suficiente para ayudar, pero no tanta como para actuar sin barreras cuando algo sale mal.</p>
+
+        <h2>Fuentes para continuar leyendo</h2>
+        <ul>
+          <li><a href="https://genai.owasp.org/resource/owasp-top-10-for-agentic-applications-for-2026/" target="_blank" rel="noreferrer">OWASP Top 10 for Agentic Applications 2026</a></li>
+          <li><a href="https://cheatsheetseries.owasp.org/cheatsheets/AI_Agent_Security_Cheat_Sheet.html" target="_blank" rel="noreferrer">OWASP AI Agent Security Cheat Sheet</a></li>
+          <li><a href="https://www.nist.gov/news-events/news/2025/01/technical-blog-strengthening-ai-agent-hijacking-evaluations" target="_blank" rel="noreferrer">NIST: Strengthening AI Agent Hijacking Evaluations</a></li>
+          <li><a href="https://atlas.mitre.org/" target="_blank" rel="noreferrer">MITRE ATLAS</a></li>
+        </ul>
+      </div>
+    </article>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap footer-row"><span>© 2026 Julitree · Juliana Gonzalez</span><a href="/blog/">Volver al blog</a></div>
+  </footer>
+  <script src="/assets/site.js"></script>
+</body>
+</html>
